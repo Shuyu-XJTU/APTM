@@ -1,2 +1,2 @@
 # APTM
-The code will be made public soon.
+The code will be public soon.
