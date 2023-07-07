@@ -1,0 +1,12 @@
+timm==0.4.9
+transformers==4.12.5
+ruamel_yaml
+opencv-python
+scikit-image
+matplotlib
+torch==1.9.1
+torchvision==0.10.1
+audtorch
+seaborn
+prettytable
+easydict

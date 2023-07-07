@@ -1,0 +1,123 @@
+image_root: 'images/CUHK-PEDES/'
+test_file: 'data/finetune/cuhk_test.json'
+val_file: 'data/finetune/cuhk_val.json'
+
+train_file:  ['data/finetune/gene_attrs/g_4x_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_0_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_1_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_2_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_3_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_4_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_5_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_6_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_7_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_8_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_9_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_10_attrs.json','data/finetune/gene_attrs/g_c_g_a_11_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_12_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_13_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_14_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_15_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_16_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_17_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_18_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_19_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_20_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_21_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_22_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_23_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_24_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_25_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_26_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_27_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_28_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_29_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_30_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_31_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_32_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_33_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_34_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_35_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_36_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_37_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_38_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_39_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_40_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_41_attrs.json',
+              'data/finetune/gene_attrs/g_c_g_a_42_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_43_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_0_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_1_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_2_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_3_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_4_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_5_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_6_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_7_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_8_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_9_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_10_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_11_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_12_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_13_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_14_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_15_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_16_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_17_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_18_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_19_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_20_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_21_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_22_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_23_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_24_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_25_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_26_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_27_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_28_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_29_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_30_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_31_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_32_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_33_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_34_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_35_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_36_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_37_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_38_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_39_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_40_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_41_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_42_attrs.json',
+              'data/finetune/gene_attrs/g_i_g_a_43_attrs.json']
+
+
+## Vision Encoder
+# swin
+use_swin: True
+vision_config: 'configs/config_swinB_384.json'
+image_res: 384
+patch_size: 32
+
+h: 384
+w: 128
+
+## Text Encoder
+text_config: 'configs/config_bert.json'
+text_encoder: 'data/bert-base-uncased'
+
+
+## Training
+batch_size_train: 150
+batch_size_test: 150
+batch_size_test_text: 750
+
+max_tokens: 56
+max_words: 56
+
+embed_dim: 256
+temp: 0.07
+k_test: 128
+
+
+## mlm loss
+mlm: True
+#mlm: False
+
+mask_prob: 0.25
+max_masks: 10
+skipgram_prb: 0.2
+skipgram_size: 3
+mask_whole_word: True
+
+
+## Other Settings
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.01, lr_mult: 2}
+
+schedular: {sched: linear, lr: 1e-4, epochs: 32, num_warmup_steps: 0.1}
+
+
+pa100k: False
+icfg_rstp: False
+
+erasing_p: 0.6
+#lr_2: True
+lr_2: False
+init_cross: True
+#init_cross: False
+
+
+load_params: True
+#load_params: False
+load_pretrained: False
+#pre: True
+pre: False
+
+
+#eda: True
+eda: False
+eda_p: 0.5
+
+attr: True
+#attr: False
+LabelSmooth: 0.4 # 0.1
+dop: 0.1
+t: 0.8
