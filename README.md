@@ -115,14 +115,14 @@ And organize those datasets in `images` folder as follows:
 We pretrain our APTM using MALS as follows：
 
 ```
-python3 run.py --task "itr_gene" --dist "f4" --output_dir "output/pretrain"
+python3 run.py --task "itr_gene" --dist "f4" --output_dir "output/pretrained"
 ```
 
 ### Fine-tuning
 We fine-tune our APTM using existing text-based Person Reid datasets. Performance can be improved by replacing the backbone with our pre-trained model. Taking CUHK-PEDES as example:
 
 ```
-python3 run.py --task "itr_cuhk" --dist "f4" --output_dir "output/ft_cuhk" --checkpoint "output/pretrain/checkpoint_31.pth"
+python3 run.py --task "itr_cuhk" --dist "f4" --output_dir "output/ft_cuhk" --checkpoint "output/pretrained/checkpoint_31.pth"
 ```
 
 ### Evaluation
