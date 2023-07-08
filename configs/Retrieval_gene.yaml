@@ -49,6 +49,7 @@ train_file:  ['data/finetune/gene_attrs/g_4x_attrs.json', 'data/finetune/gene_at
               'data/finetune/gene_attrs/g_i_g_a_41_attrs.json', 'data/finetune/gene_attrs/g_i_g_a_42_attrs.json',
               'data/finetune/gene_attrs/g_i_g_a_43_attrs.json']
 
+
 ## Vision Encoder
 # swin
 use_swin: True
@@ -79,8 +80,6 @@ k_test: 128
 
 ## mlm loss
 mlm: True
-#mlm: False
-
 mask_prob: 0.25
 max_masks: 10
 skipgram_prb: 0.2
@@ -91,32 +90,22 @@ mask_whole_word: True
 ## Other Settings
 optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.01, lr_mult: 2}
 
-schedular: {sched: linear, lr: 1e-4, epochs: 32, num_warmup_steps: 0.1}
+schedular: {sched: linear, lr: 1e-4, epochs: 32, num_warmup_steps: 2600}
 
 
 pa100k: False
 icfg_rstp: False
 
-erasing_p: 0.6
-#lr_2: True
 lr_2: False
 init_cross: True
-#init_cross: False
-
-
 load_params: True
-#load_params: False
 load_pretrained: False
-#pre: True
-pre: False
 
-
-#eda: True
+erasing_p: 0.6
 eda: False
 eda_p: 0.5
 
 attr: True
-#attr: False
-LabelSmooth: 0.4 # 0.1
+LabelSmooth: 0.4
 dop: 0.1
 t: 0.8

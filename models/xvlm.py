@@ -178,18 +178,7 @@ def load_pretrained(ckpt_rpath, config, is_eval=False, load_text=False):
     if is_eval:
         return state_dict
 
-    num_patches = (config['h'] // config['patch_size']) * (config['w'] // config['patch_size'])
     print("### Loading pretrained vision encoder", flush=True)
-    if config['pre']:
-        window_size = read_json(config['vision_config'])['window_size']
-        for k in list(state_dict.keys()):
-            if 'relative_position_bias_table' in k:
-                if 'layers.3' in k:
-                    window_size = 4
-                dst_num_pos = (2 * window_size - 1) ** 2
-                state_dict[k] = interpolate_relative_pos_embed(state_dict[k], dst_num_pos, param_name=k)
-            elif ('relative_position_index' in k) or ('attn_mask' in k):
-                del state_dict[k]
 
     if load_text:
         print("### Loading pretrained text encoder", flush=True)
