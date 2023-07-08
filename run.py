@@ -68,27 +68,27 @@ def run(args):
         assert os.path.exists(args.checkpoint)
 
     if args.task == 'itr_cuhk':
-        assert os.path.exists("/HOME/xvlm/images/CUHK-PEDES")
+        assert os.path.exists("images/CUHK-PEDES")
         args.config = 'configs/Retrieval_cuhk.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_icfg':
-        assert os.path.exists("/HOME/xvlm/images/ICFG-PEDES")
+        assert os.path.exists("images/ICFG-PEDES")
         args.config = 'configs/Retrieval_icfg.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_rstp':
-        assert os.path.exists("/HOME/xvlm/images/RSTPReid")
+        assert os.path.exists("images/RSTPReid")
         args.config = 'configs/Retrieval_rstp.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_gene':
-        assert os.path.exists("/HOME/xvlm/images/CUHK-PEDES")
+        assert os.path.exists("images/CUHK-PEDES")
         args.config = 'configs/Retrieval_gene.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_pa100k':
-        assert os.path.exists("/HOME/xvlm/images/pa100k")
+        assert os.path.exists("images/pa100k")
         args.config = 'configs/Retrieval_pa100k.yaml'
         run_retrieval(args)
 
