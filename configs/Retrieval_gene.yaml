@@ -51,12 +51,10 @@ train_file:  ['data/finetune/gene_attrs/g_4x_attrs.json', 'data/finetune/gene_at
 
 
 ## Vision Encoder
-# swin
 use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32
-
 h: 384
 w: 128
 
@@ -89,9 +87,7 @@ mask_whole_word: True
 
 ## Other Settings
 optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.01, lr_mult: 2}
-
 schedular: {sched: linear, lr: 1e-4, epochs: 32, num_warmup_steps: 2600}
-
 
 pa100k: False
 icfg_rstp: False
