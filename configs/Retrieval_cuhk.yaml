@@ -1,4 +1,4 @@
-image_root: 'images/CUHK-PEDES/'
+image_root: '/HOME/xvlm/images/CUHK-PEDES/'
 
 test_file: 'data/finetune/cuhk_test.json'
 val_file: 'data/finetune/cuhk_val.json'

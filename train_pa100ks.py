@@ -1,5 +1,5 @@
 import utils
-from train_tools import mlm, attr_loss_mult
+from train_tools import mlm
 
 def train_pa100k(model, data_loader, optimizer, tokenizer, epoch, device, scheduler, config, mask_generator=None):
     model.train()

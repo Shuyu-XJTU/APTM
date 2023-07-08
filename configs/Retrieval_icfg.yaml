@@ -1,6 +1,6 @@
 train_file:  ['data/finetune/icfg_train.json']
 test_file: 'data/finetune/icfg_test.json'
-image_root: 'images/ICFG-PEDES/'
+image_root: '/HOME/xvlm/images/ICFG-PEDES/'
 
 t: 1
 dop: 0.95

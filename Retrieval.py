@@ -11,7 +11,6 @@ import json
 from pathlib import Path
 from prettytable import PrettyTable
 
-from thop import profile
 import torch
 import torch.backends.cudnn as cudnn
 import torch.distributed as dist
@@ -80,15 +79,15 @@ def main(args, config):
 
     if args.evaluate:
         print("Start evaluating", flush=True)
-        if args.task not in ["itr_icfg", "itr_pa100k"]:
-            print("val_dataset", flush=True)
-            val_loader = create_loader([val_dataset], [None],
-                                       batch_size=[config['batch_size_test']],
-                                       num_workers=[4],
-                                       is_trains=[False],
-                                       collate_fns=[None])[0]
-            score_val_i2t, score_val_t2i = evaluation(model_without_ddp, val_loader,
-                                                       tokenizer, device, config, args)
+        # if args.task not in ["itr_icfg", "itr_pa100k"]:
+        #     print("val_dataset", flush=True)
+        #     val_loader = create_loader([val_dataset], [None],
+        #                                batch_size=[config['batch_size_test']],
+        #                                num_workers=[4],
+        #                                is_trains=[False],
+        #                                collate_fns=[None])[0]
+        #     score_val_t2i = evaluation(model_without_ddp, val_loader,
+        #                                                tokenizer, device, config, args)
 
         print("test_dataset", flush=True)
         test_loader = create_loader([test_dataset], [None],
@@ -104,7 +103,7 @@ def main(args, config):
                 score_test_i2t_attr = evaluation_attr(model_without_ddp, test_loader,
                                                       tokenizer, device, config, args)
         else:
-            score_test_i2t, score_test_t2i = evaluation(model_without_ddp, test_loader,
+            score_test_t2i = evaluation(model_without_ddp, test_loader,
                                                         tokenizer, device, config, args)
 
         if utils.is_main_process():
@@ -202,7 +201,7 @@ def main(args, config):
 
             if (epoch + 1) % 1 == 0:
                 # if args.task not in ["itr_icfg", "itr_pa100k"]:
-                #     score_val_i2t, score_val_t2i = evaluation(model_without_ddp, val_loader, tokenizer,
+                #     score_val_t2i = evaluation(model_without_ddp, val_loader, tokenizer,
                 #                                               device, config, args)
                 if args.task == "itr_pa100k":
                     if model_without_ddp.pa100k_only_img_classifier:
@@ -212,7 +211,7 @@ def main(args, config):
                         score_test_i2t = evaluation_attr(model_without_ddp, test_loader,
                                                          tokenizer, device, config, args)
                 else:
-                    score_test_i2t, score_test_t2i = evaluation(model_without_ddp, test_loader,
+                    score_test_t2i = evaluation(model_without_ddp, test_loader,
                                                                 tokenizer, device, config, args)
 
             if utils.is_main_process():
@@ -279,7 +278,7 @@ def main(args, config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--checkpoint', type=str, required=True)
+    parser.add_argument('--checkpoint', type=str)
     parser.add_argument('--config', type=str, required=True)
     parser.add_argument('--task', type=str, required=True)
     parser.add_argument('--output_dir', type=str, required=True)

@@ -9,7 +9,6 @@ import torch.distributed as dist
 from torch.nn import init
 from timm.models.layers import trunc_normal_
 from functools import partial
-from thop import profile
 
 from models.swin_transformer import SwinTransformer, interpolate_relative_pos_embed
 from models.xbert import BertConfig, BertForMaskedLM, BertModel
@@ -351,7 +350,7 @@ class XVLMBase(nn.Module):
             loss_t2i = -torch.sum(F.log_softmax(logits.t(), dim=1) * labels, dim=1).mean()
             return (loss_i2t + loss_t2i) / 2
 
-    def get_matching_loss(self, image_embeds, image_atts, image_feat, text_embeds, text_atts, text_feat, idx=Non):
+    def get_matching_loss(self, image_embeds, image_atts, image_feat, text_embeds, text_atts, text_feat, idx=None):
         """
         Matching Loss with hard negatives
         """

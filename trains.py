@@ -1,7 +1,6 @@
 import utils
 from train_tools import mlm
 import numpy as np
-from thop import profile
 
 
 def train(model, data_loader, optimizer, tokenizer, epoch, device, scheduler, config, mask_generator=None):

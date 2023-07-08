@@ -68,27 +68,27 @@ def run(args):
         assert os.path.exists(args.checkpoint)
 
     if args.task == 'itr_cuhk':
-        assert os.path.exists("images/CUHK-PEDES")
+        assert os.path.exists("/HOME/xvlm/images/CUHK-PEDES")
         args.config = 'configs/Retrieval_cuhk.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_icfg':
-        assert os.path.exists("images/ICFG-PEDES")
+        assert os.path.exists("/HOME/xvlm/images/ICFG-PEDES")
         args.config = 'configs/Retrieval_icfg.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_rstp':
-        assert os.path.exists("images/RSTPReid")
+        assert os.path.exists("/HOME/xvlm/images/RSTPReid")
         args.config = 'configs/Retrieval_rstp.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_gene':
-        assert os.path.exists("images/CUHK-PEDES")
+        assert os.path.exists("/HOME/xvlm/images/CUHK-PEDES")
         args.config = 'configs/Retrieval_gene.yaml'
         run_retrieval(args)
 
     elif args.task == 'itr_pa100k':
-        assert os.path.exists("images/pa100k")
+        assert os.path.exists("/HOME/xvlm/images/pa100k")
         args.config = 'configs/Retrieval_pa100k.yaml'
         run_retrieval(args)
 
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     parser.add_argument('--bs', default=-1, type=int, help="for each gpu, batch_size = bs // num_gpus; ")
     parser.add_argument('--epo', default=-1, type=int, help="epoch")
     parser.add_argument('--seed', default=42, type=int)
-    parser.add_argument('--checkpoint', default='', type=str, help="for fine-tuning")
+    parser.add_argument('--checkpoint', default='output/pretrain/checkpoint_31.pth', type=str, help="for fine-tuning")
     parser.add_argument('--output_dir', type=str, required=True, help='local path; ')
     parser.add_argument('--evaluate', action='store_true', help="evaluation on downstream tasks")
     args = parser.parse_args()

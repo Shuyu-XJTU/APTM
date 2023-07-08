@@ -1,4 +1,4 @@
-image_root: 'images/pa100k/release_data'
+image_root: '/HOME/xvlm/images/pa100k/release_data'
 test_file: 'data/finetune/PA100K_test.json'
 val_file: 'data/finetune/PA100K_val.json'
 train_file:  ['data/finetune/PA100K_train.json']
