@@ -48,12 +48,9 @@ lr_2: True
 load_params: False
 load_pretrained: True
 
-eda: False
-erasing_p: 0.6
-
 pa100k: True
-
 #pa100k_only_img_classifier: True
 #dop: 0.1
 
+eda: False
 LabelSmooth: 0 # 0.4

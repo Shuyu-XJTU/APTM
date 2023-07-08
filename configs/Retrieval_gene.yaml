@@ -99,9 +99,8 @@ load_pretrained: False
 
 erasing_p: 0.6
 eda: False
-eda_p: 0.5
+eda_p: 1
 
 attr: True
 LabelSmooth: 0.4
-dop: 0.1
 t: 0.8
