@@ -1,10 +1,9 @@
+image_root: 'images/ICFG-PEDES/'
 train_file:  ['data/finetune/icfg_train.json']
 test_file: 'data/finetune/icfg_test.json'
-image_root: 'images/ICFG-PEDES/'
 
 
 ## Vision Encoder
-use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32
@@ -13,7 +12,6 @@ w: 128
 
 
 ## Text Encoder
-use_roberta: False
 text_config: 'configs/config_bert.json'
 text_encoder: 'data/bert-base-uncased'
 

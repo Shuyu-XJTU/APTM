@@ -1,11 +1,10 @@
+image_root: 'images/RSTPReid/'
 train_file:  ['data/finetune/rstp_train.json']
 val_file: 'data/finetune/rstp_val.json'
 test_file: 'data/finetune/rstp_test.json'
-image_root: 'images/RSTPReid/'
 
 
 ## Vision Encoder
-use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32
@@ -14,7 +13,6 @@ w: 128
 
 
 ## Text Encoder
-use_roberta: False
 text_config: 'configs/config_bert.json'
 text_encoder: 'data/bert-base-uncased'
 

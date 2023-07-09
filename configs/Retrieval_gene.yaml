@@ -1,7 +1,6 @@
 image_root: 'images/CUHK-PEDES/'
 test_file: 'data/finetune/cuhk_test.json'
 val_file: 'data/finetune/cuhk_val.json'
-
 train_file:  ['data/finetune/gene_attrs/g_4x_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_attrs.json',
               'data/finetune/gene_attrs/g_c_g_a_0_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_1_attrs.json',
               'data/finetune/gene_attrs/g_c_g_a_2_attrs.json', 'data/finetune/gene_attrs/g_c_g_a_3_attrs.json',
@@ -51,7 +50,6 @@ train_file:  ['data/finetune/gene_attrs/g_4x_attrs.json', 'data/finetune/gene_at
 
 
 ## Vision Encoder
-use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32

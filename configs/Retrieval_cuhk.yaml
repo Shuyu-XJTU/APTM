@@ -5,7 +5,6 @@ train_file:  ['data/finetune/cuhk_train.json']
 
 
 ## Vision Encoder
-use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32

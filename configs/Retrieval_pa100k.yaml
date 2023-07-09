@@ -5,13 +5,11 @@ train_file:  ['data/finetune/PA100K_train.json']
 
 
 ## Vision Encoder
-use_swin: True
 vision_config: 'configs/config_swinB_384.json'
 image_res: 384
 patch_size: 32
 h: 384
 w: 128
-
 
 ## Text Encoder
 text_config: 'configs/config_bert.json'
@@ -52,5 +50,4 @@ pa100k: True
 #pa100k_only_img_classifier: True
 #dop: 0.1
 
-eda: False
 LabelSmooth: 0 # 0.4
