@@ -12,7 +12,8 @@ class XVLM(XVLMBase):
         if not self.pa100k_only_img_classifier:
             self.mlm = config['mlm']
             self.pa100k = config['pa100k']
-            self.eda = config['eda']
+            if not self.pa100k:
+                self.eda = config['eda']
             if ('attr' in config.keys()) and config['attr']:
                 self.attr = True
             else:
