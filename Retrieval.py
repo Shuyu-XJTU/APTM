@@ -15,7 +15,7 @@ import torch
 import torch.backends.cudnn as cudnn
 import torch.distributed as dist
 
-from models.model_retrieval import XVLM
+from models.model_retrieval import APTM_Retrieval
 from models.tokenization_bert import BertTokenizer
 
 import utils
@@ -50,7 +50,7 @@ def main(args, config):
 
     print("Creating model", flush=True)
     tokenizer = BertTokenizer.from_pretrained(config['text_encoder'])
-    model = XVLM(config=config)
+    model = APTM_Retrieval(config=config)
     if config['load_pretrained']:
         model.load_pretrained(args.checkpoint, config, is_eval=args.evaluate)
     model = model.to(device)

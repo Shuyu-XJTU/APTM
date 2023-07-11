@@ -99,6 +99,6 @@ erasing_p: 0.6
 eda: False
 eda_p: 1
 
-attr: True
-LabelSmooth: 0.4
-t: 0.8
+# attr: True
+LabelSmooth: 0 # 0.4
+# t: 0.8
