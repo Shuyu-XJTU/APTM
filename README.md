@@ -142,7 +142,7 @@ If you use APTM in your research, please cite it by the following BibTeX entry:
 @article{yang2023towards,
   title={Towards Unified Text-based Person Retrieval: A Large-scale Multi-Attribute and Language Search Benchmark},
   author={Yang, Shuyu and Zhou, Yinan and Wang, Yaxiong and Wu, Yujiao and Zhu, Li and Zheng, Zhedong},
-  journal={arXiv preprint arXiv:2306.02898},
+  journal={ACM MM 2023},
   year={2023}
 }
 
