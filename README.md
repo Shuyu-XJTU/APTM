@@ -139,10 +139,10 @@ python3 run.py --task "itr_cuhk" --evaluate --dist "f4" --output_dir "output/ft_
 If you use APTM in your research, please cite it by the following BibTeX entry:
 
 ```bibtex
-@article{yang2023towards,
+@inproceedings{yang2023towards,
   title={Towards Unified Text-based Person Retrieval: A Large-scale Multi-Attribute and Language Search Benchmark},
   author={Yang, Shuyu and Zhou, Yinan and Wang, Yaxiong and Wu, Yujiao and Zhu, Li and Zheng, Zhedong},
-  journal={ACM MM 2023},
+  booktitle = {Proceedings of the 2023 {ACM} on Multimedia Conference},
   year={2023}
 }
 
