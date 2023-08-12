@@ -16,6 +16,7 @@ from prettytable import PrettyTable
 import torch
 import torch.distributed as dist
 import torch.nn.functional as F
+from gnn_reranking import gnn_reranking
 
 import utils
 
@@ -256,16 +257,14 @@ def evaluation(model, data_loader, tokenizer, device, config, args):
         image_embed, _ = model.get_vision_embeds(image)
         image_feat = model.vision_proj(image_embed[:, 0, :])
         image_feat = F.normalize(image_feat, dim=-1)
-
         image_embeds.append(image_embed)
         image_feats.append(image_feat)
     image_embeds = torch.cat(image_embeds, dim=0)
     image_feats = torch.cat(image_feats, dim=0)
-
     sims_matrix = image_feats @ text_feats.t()
     sims_matrix = sims_matrix.t()
-
-    score_matrix_t2i = torch.full((len(texts), len(data_loader.dataset.image)), -1000.0).to(device)
+    score_matrix_t2i = torch.full((len(texts), len(data_loader.dataset.image)),  1000.0).to(device)
+    score_sim_t2i = sims_matrix
 
     num_tasks = utils.get_world_size()
     rank = utils.get_rank()
@@ -282,8 +281,15 @@ def evaluation(model, data_loader, tokenizer, device, config, args):
                                         text_embeds=text_embeds[start + i].repeat(config['k_test'], 1, 1),
                                         text_atts=text_atts[start + i].repeat(config['k_test'], 1))[:, 0, :]
         score = model.itm_head(output)[:, 1]
-        # score = torch.softmax(model.itm_head(output), dim=1)[:, 1]
         score_matrix_t2i[start + i, topk_idx] = score
+        score_sim_t2i[start + i, topk_idx] = topk_sim
+
+    min_values, _ = torch.min(score_matrix_t2i, dim=1)
+    replacement_tensor = min_values.view(-1, 1).expand(-1, score_matrix_t2i.size(1))
+    score_matrix_t2i[score_matrix_t2i == 1000.0] = replacement_tensor[score_matrix_t2i == 1000.0]
+    score_sim_t2i = (score_sim_t2i - score_sim_t2i.min()) / (score_sim_t2i.max() - score_sim_t2i.min())
+    score_matrix_t2i = (score_matrix_t2i - score_matrix_t2i.min()) / (score_matrix_t2i.max() - score_matrix_t2i.min())
+    score_matrix_t2i = score_matrix_t2i + 0.002*score_sim_t2i
 
     if args.distributed:
         dist.barrier()
