@@ -418,7 +418,7 @@ class APTM(nn.Module):
                 inputs_neg.append(inputs[b])
                 targets_neg.append(targets[b])
         if not inputs_neg:
-            return F.cross_entropy(inputs, targets, ignore_index=-1)
+            return 0
         inputs = torch.stack(inputs_neg, dim=0)
         targets = torch.stack(targets_neg, dim=0)
         return self.new_cross_entropy(inputs, targets)
