@@ -16,7 +16,6 @@ from prettytable import PrettyTable
 import torch
 import torch.distributed as dist
 import torch.nn.functional as F
-from gnn_reranking import gnn_reranking
 
 import utils
 
