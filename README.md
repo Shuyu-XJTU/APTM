@@ -1,5 +1,9 @@
 # APTM
 
+## Text-based Person Retrieval
+## Image-Text Alignment
+## Multi-Attribute Recognition
+## Synthetic Data
 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-unified-text-based-person-retrieval-a/nlp-based-person-retrival-on-cuhk-pedes)](https://paperswithcode.com/sota/nlp-based-person-retrival-on-cuhk-pedes?p=towards-unified-text-based-person-retrieval-a)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/towards-unified-text-based-person-retrieval-a/text-based-person-retrieval-on-icfg-pedes)](https://paperswithcode.com/sota/text-based-person-retrieval-on-icfg-pedes?p=towards-unified-text-based-person-retrieval-a)
