@@ -1,4 +1,5 @@
 image_root: 'images/MALS/'
+image_root_test: 'images/CUHK-PEDES/imgs'
 test_file: 'data/finetune/cuhk_test.json'
 val_file: 'data/finetune/cuhk_val.json'
 train_file:  ['data/gene_attrs/g_4x_attrs.json', 'data/gene_attrs/g_c_g_a_attrs.json',
