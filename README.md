@@ -73,12 +73,13 @@ Organize `data` folder as follows:
 
 ```
 |-- data/
+|    |-- swin_base_patch4_window7_224_22k.pth
 |    |-- bert-base-uncased/
+|    |-- gene_attrs/
+|        |-- g_4x_attrs.json
+|        |-- g_c_g_a_0_attrs.json
+|        |-- ...
 |    |-- finetune/
-|        |-- gene_attrs/
-|            |-- g_4x_attrs.json
-|            |-- g_c_g_a_0_attrs.json
-|            |-- ...
 |        |-- cuhk_train.json
 |        |-- ...
 |        |-- icfg_train.json
@@ -87,7 +88,6 @@ Organize `data` folder as follows:
 |        |-- ...
 |        |-- PA100K_train.json
 |        |-- ...
-|    |-- swin_base_patch4_window7_224_22k.pth
 ```
 
 And organize those datasets in `images` folder as follows:
