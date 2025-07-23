@@ -166,7 +166,7 @@ class re_test_dataset(Dataset):
     def __init__(self, ann_file, config, transform):
         self.ann = json.load(open(ann_file, 'r'))
         self.transform = transform
-        self.image_root = config['image_root']
+        self.image_root = config.get('image_root_test', config['image_root'])
         self.max_words = config['max_words']
         self.icfg_rstp = config['icfg_rstp']
 
