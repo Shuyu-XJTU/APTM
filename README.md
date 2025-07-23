@@ -100,11 +100,12 @@ And organize those datasets in `images` folder as follows:
 |            |-- cam_b/
 |            |-- ...
 |            |-- train_query/
-|            |-- gene_crop/
-|                |-- 4x/
-|                |-- c_g_a/
-|                |-- ...
-|                |-- i_g_a_43/
+|    |-- <MALS>/
+|        |-- gene_crop/
+|        |-- 4x/
+|        |-- c_g_a/
+|        |-- ...
+|        |-- i_g_a_43/
 |
 |    |-- <ICFG-PEDES>/
 |        |-- test/
